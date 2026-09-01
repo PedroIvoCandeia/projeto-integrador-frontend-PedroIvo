@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -51,3 +52,225 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio Sabor & Arte</title>
+</head>
+
+<body>
+
+```
+<h1>Sabor & Arte</h1>
+
+<p>Bem-vindo ao nosso restaurante!</p>
+
+<h2>Pratos Principais</h2>
+
+<h3>Filé à Parmegiana</h3>
+<p>Filé empanado com queijo, molho de tomate, arroz e batata frita.</p>
+<p>Preço: R$ 39,90</p>
+
+<h3>Frango Grelhado</h3>
+<p>Frango grelhado acompanhado de arroz, feijão e salada.</p>
+<p>Preço: R$ 29,90</p>
+
+<h3>Espaguete à Bolonhesa</h3>
+<p>Macarrão com molho de tomate e carne moída.</p>
+<p>Preço: R$ 32,90</p>
+
+<h2>Bebidas</h2>
+
+<h3>Suco Natural</h3>
+<p>Suco de laranja, limão ou maracujá.</p>
+<p>Preço: R$ 8,00</p>
+
+<h3>Refrigerante</h3>
+<p>Refrigerante em lata.</p>
+<p>Preço: R$ 6,00</p>
+
+<h2>Sobremesas</h2>
+
+<h3>Pudim</h3>
+<p>Pudim de leite condensado com calda de caramelo.</p>
+<p>Preço: R$ 12,90</p>
+
+<h3>Petit Gateau</h3>
+<p>Bolo de chocolate acompanhado de sorvete.</p>
+<p>Preço: R$ 18,90</p>
+
+
+<h2>Prato em Destaque</h2>
+
+<svg viewBox="0 0 320 120"
+     width="320"
+     height="120"
+     role="img"
+     aria-labelledby="tituloSelo">
+
+    <title id="tituloSelo">Selo: Prato em Destaque - Filé à Parmegiana</title>
+
+    <rect x="5" y="5" width="310" height="110" rx="15" fill="#8B0000" />
+
+    <polygon points="55,25 62,45 83,45 66,57 72,78 55,66 38,78 44,57 27,45 48,45"
+             fill="#FFD700" />
+
+    <text x="100" y="50" font-size="20" fill="#FFFFFF">PRATO EM</text>
+    <text x="100" y="80" font-size="20" fill="#FFFFFF">DESTAQUE</text>
+
+</svg>
+
+<p>O Filé à Parmegiana é um dos pratos em destaque do restaurante.</p>
+
+
+<h2>Popularidade dos Pratos</h2>
+
+<p>Confira a quantidade aproximada de pedidos dos principais pratos.</p>
+
+<canvas id="grafico-pratos"
+        width="600"
+        height="350"
+        role="img"
+        aria-label="Gráfico de popularidade dos pratos: Filé à Parmegiana 80 pedidos, Frango Grelhado 60 pedidos e Espaguete à Bolonhesa 70 pedidos.">
+
+    <p>
+        Filé à Parmegiana: 80 pedidos.
+        Frango Grelhado: 60 pedidos.
+        Espaguete à Bolonhesa: 70 pedidos.
+    </p>
+
+</canvas>
+
+<p>
+    Dados do gráfico:
+    Filé à Parmegiana: 80 pedidos;
+    Frango Grelhado: 60 pedidos;
+    Espaguete à Bolonhesa: 70 pedidos.
+</p>
+
+
+<!-- Seção de vídeo exigida pela atividade -->
+<h2>Conheça o Sabor & Arte</h2>
+
+<p>Veja uma breve apresentação dos nossos pratos e do ambiente do restaurante.</p>
+
+<!--
+    preload="none" foi escolhido porque o vídeo não é essencial para o carregamento inicial
+    da página e evita baixar o arquivo antes que o usuário clique em reproduzir.
+-->
+<video id="videoRestaurante"
+       controls
+       preload="none"
+       width="700">
+
+    <!-- Seu vídeo enviado -->
+    <source src="Pippit_0901_RestaurantePratos.mp4" type="video/mp4">
+
+    <!-- Adicione a versão WebM quando converter o vídeo -->
+    <!-- <source src="Pippit_0901_RestaurantePratos.webm" type="video/webm"> -->
+
+    <track src="restaurante.vtt"
+           kind="captions"
+           srclang="pt-BR"
+           label="Português"
+           default>
+
+    Seu navegador não suporta reprodução de vídeo.
+</video>
+
+<br>
+<small id="compatibilidade-video"></small>
+
+<hr>
+
+<p>Obrigado pela preferência!</p>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const video = document.getElementById("videoRestaurante");
+        const mensagem = document.getElementById("compatibilidade-video");
+
+        const mp4 = video.canPlayType("video/mp4");
+
+        if (mp4 === "probably") {
+            mensagem.textContent = "Seu navegador provavelmente utilizará o formato MP4.";
+        } else if (mp4 === "maybe") {
+            mensagem.textContent = "Seu navegador pode utilizar o formato MP4.";
+        } else {
+            mensagem.textContent = "Formato de vídeo não suportado.";
+        }
+
+        console.log("MP4:", mp4);
+
+
+        const canvas = document.getElementById("grafico-pratos");
+        const ctx = canvas.getContext("2d");
+
+        const dados = [80, 60, 70];
+
+        let altura = 0;
+
+        function animar() {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#333";
+            ctx.font = "18px Arial";
+            ctx.fillText("Pedidos dos pratos principais", 180, 30);
+
+            ctx.beginPath();
+            ctx.moveTo(70, 300);
+            ctx.lineTo(550, 300);
+            ctx.stroke();
+
+            let parmegiana = Math.min(altura, dados[0] * 2);
+            let frango = Math.min(altura, dados[1] * 2);
+            let espaguete = Math.min(altura, dados[2] * 2);
+
+            ctx.fillStyle = "#8B0000";
+            ctx.fillRect(100, 300 - parmegiana, 80, parmegiana);
+
+            ctx.fillStyle = "#D2691E";
+            ctx.fillRect(260, 300 - frango, 80, frango);
+
+            ctx.fillStyle = "#228B22";
+            ctx.fillRect(420, 300 - espaguete, 80, espaguete);
+
+            ctx.fillStyle = "#333";
+            ctx.font = "14px Arial";
+
+            ctx.fillText("Parmegiana", 105, 325);
+            ctx.fillText("Frango", 275, 325);
+            ctx.fillText("Espaguete", 425, 325);
+
+            if (altura >= dados[0] * 2) {
+                ctx.fillText("80", 130, 290 - parmegiana);
+            }
+
+            if (altura >= dados[1] * 2) {
+                ctx.fillText("60", 290, 290 - frango);
+            }
+
+            if (altura >= dados[2] * 2) {
+                ctx.fillText("70", 450, 290 - espaguete);
+            }
+
+            if (altura < dados[0] * 2) {
+                altura += 2;
+                requestAnimationFrame(animar);
+            }
+        }
+
+        animar();
+    });
+</script>
+```
+
+</body>
+</html>
+>>>>>>> 48a8eab (feat: adiciona seção de vídeo com fallback de formatos)
