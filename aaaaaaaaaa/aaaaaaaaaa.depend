@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1788525030 source:c:\users\pedroivocandeiadefig\desktop\aaaaaaaaaa\aaaaaaaaaa\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
