@@ -7,7 +7,7 @@
     --raio: 0.75rem;
 }
 
-/* Usamos REM em todo font-size para melhorar a acessibilidade. */
+/* Usamos REM para melhorar a acessibilidade. */
 
 body {
     background: var(--cor-fundo);
@@ -44,12 +44,60 @@ h3 {
     font-size: 1.2rem;
 }
 
+/* ---------- FLEXBOX ---------- */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: .5rem .9rem;
+    border-radius: .5rem;
+    transition: background .3s ease, transform .2s ease;
+}
+
+.menu a:visited {
+    color: #f3d6c1;
+}
+
+.menu a:hover {
+    background: var(--cor-secundaria);
+    color: white;
+}
+
+.menu a:focus-visible {
+    outline: .18rem solid #FFD700;
+    outline-offset: .15rem;
+}
+
+/* ---------- GRID ---------- */
+
+.grade-cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
 .card {
     background: white;
     padding: 1rem;
-    margin: 1rem 0;
-    border: 0.125rem solid #ddd;
+    border: .125rem solid #ddd;
     border-radius: var(--raio);
+
+    /* Usamos transform em vez de width/height para evitar reflow
+       durante a animação de hover. */
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .35rem .75rem rgba(0,0,0,.15);
 }
 
 .destaque {
@@ -57,43 +105,31 @@ h3 {
     background: #fff2e0;
 }
 
-.botao {
-    display: inline-block;
-    background: var(--cor-primaria);
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: var(--raio);
-    text-decoration: none;
+/* Pseudo-classe estrutural */
+
+.grade-cardapio .card:nth-child(even) {
+    border-color: var(--cor-secundaria);
 }
 
-/* Combinador descendente escolhido para estilizar apenas os links dentro do menu. */
-
-nav a {
-    margin: 0 0.8rem;
-}
-
-/* LoVe HAte */
-
-a:link {
-    color: white;
-}
-
-a:visited {
-    color: #f3d6c1;
-}
-
-a:hover {
-    color: #FFD700;
-}
+/* ---------- LINKS ---------- */
 
 a:active {
     color: #ffb347;
 }
 
+/* ---------- LISTA ---------- */
+
 .lista-estilizada {
     list-style-type: square;
     padding-left: 1.5rem;
 }
+
+.lista-estilizada li:first-child {
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+/* ---------- TABELA ---------- */
 
 table {
     width: 100%;
@@ -103,14 +139,20 @@ table {
 
 th,
 td {
-    border: 0.0625rem solid #ccc;
-    padding: 0.8rem;
+    border: .0625rem solid #ccc;
+    padding: .8rem;
 }
 
 th {
     background: var(--cor-primaria);
     color: white;
 }
+
+tbody tr:nth-child(even) {
+    background: #fff3e6;
+}
+
+/* ---------- MÍDIA ---------- */
 
 video,
 canvas {
