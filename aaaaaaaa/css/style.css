@@ -54,12 +54,8 @@ h3 {
     margin-top: 1rem;
 }
 
-.menu a {
-    text-decoration: none;
+.menu a:link {
     color: white;
-    padding: .5rem .9rem;
-    border-radius: .5rem;
-    transition: background .3s ease, transform .2s ease;
 }
 
 .menu a:visited {
@@ -69,6 +65,10 @@ h3 {
 .menu a:hover {
     background: var(--cor-secundaria);
     color: white;
+}
+
+.menu a:active {
+    color: #ffb347;
 }
 
 .menu a:focus-visible {
