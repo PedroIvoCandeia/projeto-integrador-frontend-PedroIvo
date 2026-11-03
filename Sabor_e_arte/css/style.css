@@ -1,0 +1,534 @@
+/* Cores principais do restaurante */
+
+:root {
+    --marrom: #39251d;
+    --marrom-claro: #604334;
+    --dourado: #c49a55;
+    --creme: #f8f3eb;
+    --branco: #ffffff;
+    --texto: #51463f;
+    --cinza: #81766e;
+    --sombra: 0 8px 25px rgba(45, 30, 20, 0.10);
+}
+
+/* Configurações gerais */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: var(--creme);
+    color: var(--marrom);
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.secao {
+    padding: 90px 8%;
+}
+
+.subtitulo {
+    color: var(--dourado);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+/* Cabeçalho e navegação */
+
+.cabecalho {
+    background-color: var(--marrom);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navegacao {
+    max-width: 1400px;
+    min-height: 85px;
+    margin: auto;
+    padding: 15px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--branco);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--dourado);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    color: var(--branco);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Pseudo-classes para navegação */
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: var(--dourado);
+}
+
+.botao-menu {
+    color: var(--marrom);
+    background-color: var(--dourado);
+    padding: 11px 20px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-menu:hover,
+.botao-menu:focus-visible {
+    background-color: var(--branco);
+}
+
+/* Apresentação principal */
+
+.inicio {
+    min-height: 620px;
+    padding: 100px 10%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--marrom);
+
+    background-image:
+        linear-gradient(rgba(30, 18, 12, 0.72), rgba(30, 18, 12, 0.72)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.inicio-conteudo {
+    max-width: 680px;
+    color: var(--branco);
+}
+
+.inicio h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+}
+
+.descricao-inicio {
+    max-width: 540px;
+    font-family: Arial, sans-serif;
+    color: #eee2d6;
+    margin-bottom: 30px;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: var(--dourado);
+    color: var(--marrom);
+    padding: 15px 25px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-principal:hover,
+.botao-principal:focus-visible {
+    background-color: var(--branco);
+    transform: translateY(-3px);
+}
+
+/* Sobre o restaurante */
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.sobre h2,
+.titulo-secao h2,
+.contato h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p:not(.subtitulo) {
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.sobre-destaque {
+    background-color: var(--marrom);
+    color: var(--branco);
+    text-align: center;
+    padding: 50px 25px;
+    border-bottom: 4px solid var(--dourado);
+}
+
+.sobre-destaque span {
+    font-size: 50px;
+}
+
+.sobre-destaque h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.sobre-destaque p {
+    color: #e2d4c6;
+    font-family: Arial, sans-serif;
+}
+
+/* Cardápio */
+
+.cardapio {
+    background-color: #eee6db;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-secao > p:last-child {
+    color: var(--cinza);
+    font-family: Arial, sans-serif;
+}
+
+/* Pesquisa e filtros */
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.filtros input,
+.filtros select {
+    width: min(100%, 300px);
+    padding: 13px 15px;
+    border: 1px solid #d4c5b5;
+    border-radius: 5px;
+    background-color: var(--branco);
+    color: var(--marrom);
+    outline: none;
+}
+
+.filtros input:focus,
+.filtros select:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(196, 154, 85, 0.18);
+}
+
+/* Grid dos produtos */
+
+.grade-cardapio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.produto {
+    background-color: var(--branco);
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(45, 30, 20, 0.16);
+}
+
+.produto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.produto-info {
+    padding: 22px;
+}
+
+.categoria-produto {
+    color: var(--dourado);
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.produto h3 {
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.produto-info p {
+    min-height: 65px;
+    color: var(--cinza);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.produto-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.produto-final strong {
+    color: var(--marrom-claro);
+    font-size: 19px;
+}
+
+.adicionar {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.adicionar:hover,
+.adicionar:focus-visible {
+    background-color: var(--dourado);
+    color: var(--marrom);
+}
+
+/* Pseudo-classe estrutural */
+
+.produto:nth-child(odd) {
+    border-bottom: 3px solid var(--dourado);
+}
+
+.sem-resultados {
+    text-align: center;
+    padding: 30px;
+    color: var(--cinza);
+}
+
+/* Carrinho */
+
+.carrinho {
+    background-color: var(--branco);
+}
+
+.lista-carrinho {
+    max-width: 800px;
+    margin: auto;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5ddd3;
+    font-family: Arial, sans-serif;
+}
+
+.controles-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controles-carrinho button,
+.botao-limpar {
+    background-color: var(--marrom);
+    color: var(--branco);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.controles-carrinho button:hover,
+.botao-limpar:hover {
+    background-color: var(--dourado);
+    color: var(--marrom);
+}
+
+.total-carrinho {
+    max-width: 800px;
+    margin: 25px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.total-carrinho h3 {
+    font-size: 22px;
+}
+
+/* Contato */
+
+.contato {
+    background-color: var(--marrom);
+    color: var(--branco);
+    text-align: center;
+}
+
+.contato-info {
+    margin-top: 25px;
+    color: #e6d7c8;
+    font-family: Arial, sans-serif;
+}
+
+/* Rodapé */
+
+.rodape {
+    background-color: #241711;
+    color: var(--branco);
+    padding: 35px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.rodape p,
+.rodape > a:last-child {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #d3c4b6;
+}
+
+/* Responsividade para celulares e tablets */
+
+@media (max-width: 800px) {
+
+    .navegacao {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .inicio {
+        min-height: 520px;
+        padding: 80px 8%;
+    }
+
+    .secao {
+        padding: 65px 6%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .navegacao {
+        padding: 15px 5%;
+    }
+
+    .botao-menu {
+        display: none;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+
+    .filtros input,
+    .filtros select {
+        width: 100%;
+    }
+
+    .grade-cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    .total-carrinho,
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .item-carrinho {
+        flex-wrap: wrap;
+    }
+}
+
+/* Acessibilidade: foco visível pelo teclado */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--dourado);
+    outline-offset: 4px;
+}
