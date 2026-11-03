@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sabor & Arte: pratos deliciosos, bebidas e sobremesas preparados com carinho.">
+
+    <title>Sabor & Arte | Restaurante</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/logica.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <nav class="navegacao">
+            <a href="#inicio" class="logo">Sabor <span>&</span> Arte.</a>
+
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <a href="#cardapio" class="botao-menu">Ver cardápio</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Apresentação principal -->
+        <section class="inicio" id="inicio">
+            <div class="inicio-conteudo">
+                <p class="subtitulo">UMA EXPERIÊNCIA DE SABOR</p>
+
+                <h1>O prazer de comer bem está em cada detalhe.</h1>
+
+                <p class="descricao-inicio">
+                    No Sabor & Arte, cada prato é preparado com carinho,
+                    qualidade e ingredientes selecionados.
+                </p>
+
+                <a href="#cardapio" class="botao-principal">
+                    Conheça nosso cardápio
+                </a>
+            </div>
+        </section>
+
+        <!-- Sobre o restaurante -->
+        <section class="sobre secao" id="sobre">
+            <div class="sobre-texto">
+                <p class="subtitulo">NOSSA ESSÊNCIA</p>
+
+                <h2>Mais que uma refeição, uma experiência.</h2>
+
+                <p>
+                    O Sabor & Arte nasceu da paixão pela boa gastronomia.
+                    Nosso objetivo é oferecer refeições saborosas,
+                    preparadas com dedicação e atenção a cada detalhe.
+                </p>
+
+                <p>
+                    Acreditamos que uma boa refeição reúne qualidade,
+                    carinho e momentos especiais.
+                </p>
+            </div>
+
+            <div class="sobre-destaque">
+                <span>🍽️</span>
+                <h3>Feito com carinho</h3>
+                <p>Qualidade e sabor em cada prato.</p>
+            </div>
+        </section>
+
+        <!-- Cardápio -->
+        <section class="cardapio secao" id="cardapio">
+
+            <div class="titulo-secao">
+                <p class="subtitulo">SABORES ESPECIAIS</p>
+                <h2>Nosso Cardápio</h2>
+                <p>Escolha seu prato favorito.</p>
+            </div>
+
+            <div class="filtros">
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="Pesquisar prato..."
+                    aria-label="Pesquisar pratos"
+                >
+
+                <select id="categoria" aria-label="Filtrar por categoria">
+                    <option value="todos">Todas as categorias</option>
+                    <option value="prato">Pratos principais</option>
+                    <option value="bebida">Bebidas</option>
+                    <option value="sobremesa">Sobremesas</option>
+                </select>
+            </div>
+
+            <div class="grade-cardapio" id="grade-cardapio">
+
+                <article class="produto" data-categoria="prato">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+                         alt="Filé à parmegiana">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Prato principal</span>
+                        <h3>Filé à Parmegiana</h3>
+                        <p>Filé empanado com queijo, molho de tomate, arroz e batata frita.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 39,90</strong>
+                            <button class="adicionar" data-nome="Filé à Parmegiana" data-preco="39.90">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="prato">
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800"
+                         alt="Frango grelhado">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Prato principal</span>
+                        <h3>Frango Grelhado</h3>
+                        <p>Frango grelhado acompanhado de arroz, feijão e salada.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 29,90</strong>
+                            <button class="adicionar" data-nome="Frango Grelhado" data-preco="29.90">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="prato">
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800"
+                         alt="Espaguete à bolonhesa">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Prato principal</span>
+                        <h3>Espaguete à Bolonhesa</h3>
+                        <p>Macarrão com molho de tomate e carne moída.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 32,90</strong>
+                            <button class="adicionar" data-nome="Espaguete à Bolonhesa" data-preco="32.90">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="bebida">
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800"
+                         alt="Suco natural">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Bebida</span>
+                        <h3>Suco Natural</h3>
+                        <p>Suco de laranja, limão ou maracujá.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 8,00</strong>
+                            <button class="adicionar" data-nome="Suco Natural" data-preco="8.00">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="bebida">
+                    <img src="https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=800"
+                         alt="Refrigerante em lata">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Bebida</span>
+                        <h3>Refrigerante</h3>
+                        <p>Refrigerante em lata.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 6,00</strong>
+                            <button class="adicionar" data-nome="Refrigerante" data-preco="6.00">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="sobremesa">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800"
+                         alt="Pudim de leite condensado">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Sobremesa</span>
+                        <h3>Pudim</h3>
+                        <p>Pudim de leite condensado com calda de caramelo.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 12,90</strong>
+                            <button class="adicionar" data-nome="Pudim" data-preco="12.90">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="produto" data-categoria="sobremesa">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800"
+                         alt="Petit gateau com sorvete">
+
+                    <div class="produto-info">
+                        <span class="categoria-produto">Sobremesa</span>
+                        <h3>Petit Gateau</h3>
+                        <p>Bolo de chocolate acompanhado de sorvete.</p>
+
+                        <div class="produto-final">
+                            <strong>R$ 18,90</strong>
+                            <button class="adicionar" data-nome="Petit Gateau" data-preco="18.90">
+                                Adicionar +
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <p id="sem-resultados" class="sem-resultados" hidden>
+                Nenhum produto encontrado.
+            </p>
+
+        </section>
+
+        <!-- Carrinho -->
+        <section class="carrinho secao" id="carrinho">
+            <div class="titulo-secao">
+                <p class="subtitulo">SEU PEDIDO</p>
+                <h2>Meu Carrinho</h2>
+            </div>
+
+            <div id="lista-carrinho" class="lista-carrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
+
+            <div class="total-carrinho">
+                <h3>Total: <span id="valor-total">R$ 0,00</span></h3>
+                <button id="limpar-carrinho" class="botao-limpar">
+                    Limpar carrinho
+                </button>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="contato secao" id="contato">
+            <p class="subtitulo">FALE CONOSCO</p>
+            <h2>Será um prazer receber você.</h2>
+
+            <p>Venha conhecer o Sabor & Arte e aproveite nossos sabores.</p>
+
+            <div class="contato-info">
+                <p>📍 Endereço: Rua fictícia N° 00</p>
+                <p>🕒 Horário: das 12h às 23h</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="#inicio" class="logo">Sabor <span>&</span> Arte.</a>
+        <p>© 2026 Sabor & Arte. Todos os direitos reservados.</p>
+        <a href="#inicio">Voltar ao início ↑</a>
+    </footer>
+
+</body>
+</html>
