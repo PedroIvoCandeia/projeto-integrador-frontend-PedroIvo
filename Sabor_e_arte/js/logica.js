@@ -1,4 +1,3 @@
-
 // Elementos do site
 const botoesAdicionar = document.querySelectorAll(".adicionar");
 const listaCarrinho = document.getElementById("lista-carrinho");
